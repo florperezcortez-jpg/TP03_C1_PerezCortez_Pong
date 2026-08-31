@@ -1,28 +1,27 @@
-using UnityEngine;
+ using UnityEngine;
 
 public class movementcircle : MonoBehaviour
 {
     private SpriteRenderer sr;
+    public float speed = 5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void awake ()
+    void Start()
+    {
+
+    }
+
+    void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
     }
-}
-    
-    void Start()
-    {
-      
-    }
-    
+
     // Update is called once per frame
     void Update()
     {
         //velocidad
-        float speed = 5f;
+      
         float step = speed * Time.deltaTime;
-        
 
         //asignar movimientos
         if (Input.GetKey(KeyCode.UpArrow))
@@ -34,13 +33,11 @@ public class movementcircle : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
             transform.Translate(Vector2.right * step);
 
-
         //rotacion
         if (Input.GetKeyDown(KeyCode.Q))
             transform.Rotate(Vector2.left * 10);
         if (Input.GetKeyDown(KeyCode.E))
             transform.Rotate(Vector2.right * 10);
-
 
         //color
         if (Input.GetKeyUp(KeyCode.R))
@@ -52,3 +49,4 @@ public class movementcircle : MonoBehaviour
         }
     }
 }
+

@@ -3,21 +3,24 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     private SpriteRenderer sr;
+    public float speed = 5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        Debug.Log("Ready To Move!");
-      void awake()
+
+    void Awake()
         {
             sr = GetComponent<SpriteRenderer>();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
+    
+void Start()
+{ 
+    Debug.Log("Ready To Move!");
+}
+   
+// Update is called once per frame
+void Update()
     {
-        float speed = 5f; 
+        
         float step = speed * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.W))
